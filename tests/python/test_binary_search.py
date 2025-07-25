@@ -1,6 +1,6 @@
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../python_playground')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../python_playground')))
 
 from search.binary_search import binary_search
 
