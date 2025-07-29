@@ -1,3 +1,14 @@
+/*
+Binary Search
+
+Given a sorted vector `arr` and a target value `target`, this function
+returns the index of `target` in the vector using binary search.
+If the target is not found, it returns -1.
+
+Time Complexity: O(log N)
+Space Complexity: O(1)
+*/
+
 #include "binary_search.hpp"
 
 int binary_search(const std::vector<int>& arr, int target) {
