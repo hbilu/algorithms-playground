@@ -4,14 +4,17 @@ project(algorithm_playground)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_library(binary_search
+add_library(algorithms
     cpp_playground/search/binary_search.cpp
+    cpp_playground/search/dfs_of_graph.cpp
 )
 
-add_executable(test_binary_search
+add_executable(cpp_tests
+    tests/cpp/test_main.cpp
     tests/cpp/test_binary_search.cpp
+    tests/cpp/test_dfs_of_graph.cpp
 )
 
-target_include_directories(test_binary_search PRIVATE tests/cpp)
+target_include_directories(cpp_tests PRIVATE cpp_playground tests/cpp)
 
-target_link_libraries(test_binary_search binary_search)
+target_link_libraries(cpp_tests PRIVATE algorithms)
