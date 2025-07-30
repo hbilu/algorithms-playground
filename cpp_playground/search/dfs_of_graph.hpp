@@ -3,6 +3,7 @@
 
 class DFS {
 public:
+    [[nodiscard]]
     std::vector<int> dfs(const std::vector<std::vector<int>>& adj);
 
 private:

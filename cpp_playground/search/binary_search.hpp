@@ -1,4 +1,6 @@
 #pragma once
-#include <vector>
+#include <span>
 
-int binary_search(const std::vector<int>& arr, int target);
+template <typename T>
+[[nodiscard]]
+int binary_search(std::span<const T> arr, T target);

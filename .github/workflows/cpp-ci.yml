@@ -8,8 +8,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install build tools
-      run: sudo apt-get update && sudo apt-get install -y build-essential cmake
+    - name: Install GCC 13 and CMake
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y software-properties-common
+        sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+        sudo apt-get update
+        sudo apt-get install -y gcc-13 g++-13 cmake
+        sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 100
+        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 100
     
     - name: Cache CMake build and compiler info
       uses: actions/cache@v3

@@ -11,7 +11,8 @@ Space Complexity: O(1)
 
 #include "binary_search.hpp"
 
-int binary_search(const std::vector<int>& arr, int target) {
+template <typename T>
+int binary_search(std::span<const T> arr, T target) {
     int left = 0, right = static_cast<int>(arr.size()) - 1;
 
     while (left <= right) {
@@ -23,3 +24,5 @@ int binary_search(const std::vector<int>& arr, int target) {
 
     return -1;
 }
+
+template int binary_search<int>(std::span<const int>, int);
